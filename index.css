@@ -11,6 +11,7 @@ body {
 
 body a {
   text-decoration: none;
+  color: black;
 }
 
 /*ヘッダー*/
@@ -121,17 +122,26 @@ td {
   width: 54%;
 }
 
+.edit-btn {
+  background: #99FF66;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 7px;
+  cursor: pointer;
+  color: white;
+}
+
+.delete-btn {
+  background: #FF69A3;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 7px;
+  cursor: pointer;
+  color: white;
+}
+
 /*編集画面*/
 .edit-title {
   margin: 30px auto -28px;
   width: 40%;
-}
-
-.edit-btn {
-  background: #EEE;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: black;
-  padding: 5px;
-  cursor: pointer;
 }

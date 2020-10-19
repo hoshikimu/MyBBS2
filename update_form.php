@@ -20,7 +20,7 @@
 <body>
   <header>
     <nav>
-      <p class="h-logo">MyBBS2</p>
+      <a href="/MyBBS2/index.php" class="h-logo">MyBBS2</a>
     </nav>
   </header>
   <main>

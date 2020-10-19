@@ -1,10 +1,13 @@
 <?php
+  require_once('env.php');
 
   Class Dbc {
     public function dbConnect() {
-      $dsn = 'mysql:host=localhost;dbname=MyBBS;charset=utf8';
-      $user = 'bbs_user';
-      $pass = 'hogehogebbs';
+      $host   = DB_HOST;
+      $dbname = DB_NAME;
+      $user   = DB_USER;
+      $pass   = DB_PASS;
+      $dsn    = "mysql:host=$host;dbname=$dbname;charset=utf8";
 
       try {
         $dbh = new PDO($dsn, $user, $pass, [
@@ -105,6 +108,20 @@
       }
 
       return $result;
+    }
+
+    public function postDelete($id) {
+      if (empty($id)) {
+        exit('IDが不正です。');
+      }
+
+      $dbh = $this->dbConnect();
+
+      $stmt = $dbh->prepare('DELETE FROM posts Where id = :id');
+      $stmt->bindValue(':id', (int)$id, PDO::PARAM_INT);
+
+      $stmt->execute();
+      echo '投稿を削除しました！';
     }
   }
 ?>

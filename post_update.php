@@ -14,3 +14,4 @@
   $dbc->postValidate($posts);
   $dbc->postUpdate($posts, $postedAt);
 ?>
+<p><a href="/MyBBS2/">戻る</a></p>

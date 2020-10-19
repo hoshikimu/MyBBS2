@@ -11,6 +11,7 @@
   }
 
   $dbc = new Dbc();
-  $dbc->postValidate($posts)
+  $dbc->postValidate($posts);
   $dbc->postCreate($posts, $postedAt);
 ?>
+<p><a href="/MyBBS2/">戻る</a></p>
