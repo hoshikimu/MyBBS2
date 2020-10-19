@@ -1,4 +1,4 @@
-<?php
+<?PHP
   require_once('dbc.php');
 
   date_default_timezone_set('Asia/Tokyo');
@@ -11,6 +11,6 @@
   }
 
   $dbc = new Dbc();
-  $dbc->postValidate($posts)
-  $dbc->postCreate($posts, $postedAt);
+  $dbc->postValidate($posts);
+  $dbc->postUpdate($posts, $postedAt);
 ?>

@@ -31,9 +31,19 @@
         <div class="posts-table">
           <table>
             <?php if (count($postsData)) : ?>
-              <tr><th class="post-user">投稿者</th><th class="post-at">投稿日時</th><th class="post-message">本文</th></tr>
+              <tr>
+                <th class="post-user">投稿者</th>
+                <th class="post-at">投稿日時</th>
+                <th class="post-message">本文</th>
+                <th></th>
+              </tr>
               <?php foreach ($postsData as $column) : ?>
-                <tr><td><?php echo $column['user']; ?></td><td><?php echo $column['post_at']; ?></td><td><?php echo $column['message']; ?></td></tr>
+                <tr>
+                  <td><?php echo $column['user']; ?></td>
+                  <td><?php echo $column['post_at']; ?></td>
+                  <td><?php echo $column['message']; ?></td>
+                  <td><a href="/MyBBS2/update_form.php?id=<?php echo $column['id'] ?>" class="edit-btn">編集</a></td>
+                </tr>
               <?php endforeach; ?>
             <?php else : ?>
               <tr><td class="non-post">まだ投稿はありません。</td></tr>
