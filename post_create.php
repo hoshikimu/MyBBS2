@@ -22,24 +22,6 @@
     $postedAt = date('Y-m-d H:i:s');
   }
 
-  $sql = 'INSERT INTO
-            posts(user, message, post_at)
-          VALUES
-            (:user, :message, :post_at)';
-
-  $dbh = dbConnect();
-  $dbh->beginTransaction();
-
-  try {
-    $stmt = $dbh->prepare($sql);
-    $stmt->bindValue(':user', $posts['user'], PDO::PARAM_STR);
-    $stmt->bindValue(':message', $posts['message'], PDO::PARAM_STR);
-    $stmt->bindValue(':post_at', $postedAt, PDO::PARAM_STR);
-    $stmt->execute();
-    $dbh->commit();
-    echo '投稿に成功しました！';
-  } catch(PODException $e) {
-    $dbh->rollBack();
-    exit($e);
-  }
+  $dbc = new Dbc();
+  $dbc->postCreate($posts, $postedAt);
 ?>

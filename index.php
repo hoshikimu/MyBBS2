@@ -1,6 +1,9 @@
 <?php
   require_once('dbc.php');
-  $postsData = getAllPosts();
+
+  $dbc = new Dbc();
+  $postsData = $dbc->getAllPosts();
+  $postsData = array_reverse($postsData);
 ?>
 
 <!DOCTYPE html>
